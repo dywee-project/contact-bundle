@@ -1,0 +1,19 @@
+dywee_message_new:
+    path:     /contact
+    defaults: { _controller: DyweeContactBundle:Contact:new }
+
+dywee_message_view:
+    path:     /admin6833/message/{id}/view
+    defaults: { _controller: DyweeContactBundle:Contact:view }
+    requirements:
+        id: \d+
+
+dywee_message_delete:
+    path:     /admin6833/message/{id}/delete
+    defaults: { _controller: DyweeContactBundle:Contact:delete }
+    requirements:
+        id: \d+
+
+dywee_message_table:
+    path:     /admin6833/contact/table
+    defaults: { _controller: DyweeContactBundle:Contact:table }

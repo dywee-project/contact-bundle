@@ -1,0 +1,20 @@
+{# Dywee\CMSBundle\Resources\View\index.html.twig #}
+
+{% extends "::layout.html.twig" %}
+
+{% block title %}
+     {{ parent() }}
+{% endblock %}
+
+{% block body %}
+     <h1>Contactez-nous</h1>
+
+     <div class="col-md-8">
+          {% block bodyContent %}
+          {% endblock %}
+     </div>
+     <div class="col-md-4">
+          {{ render(controller('DyweeContactBundle:Plugins:ContactInfos')) }}
+     </div>
+
+{% endblock %}

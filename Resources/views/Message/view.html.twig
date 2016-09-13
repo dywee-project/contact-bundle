@@ -1,0 +1,36 @@
+{# Dywee\ContactBundle\Resources\View\Message\view.html.twig #}
+
+{%  extends "DyweeContactBundle::admin.html.twig" %}
+
+{% block body %}
+
+    <div class="title-heading">
+        <h1 class="text-center">Coup d'oeil sur un message</h1>
+    </div>
+    <div class="row">
+        <div class="col-md-2">Date: </div>
+        <div class="col-md-9">{{ message.sendAt|date('d/m/Y') }}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">Prénom: </div>
+        <div class="col-md-9">{{ message.firstName }}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">Nom: </div>
+        <div class="col-md-9">{{ message.lastName }}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">Email: </div>
+        <div class="col-md-9">{{ message.email }}</div>
+    </div>
+    <div class="row">
+        <div class="col-md-2">Téléphone: </div>
+        <div class="col-md-9">{{ message.phone }}</div>
+    </div>
+    <p>&nbsp;</p>
+    <div class="well">
+        <div class="col-md-9">{{ message.message }}</div>
+        <p>&nbsp;</p>
+    </div>
+
+{% endblock %}

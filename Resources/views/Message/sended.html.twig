@@ -1,0 +1,13 @@
+{# Dywee\ContactBundle\Resources\View\Message\add.html.twig #}
+
+{%  extends "DyweeContactBundle::layout.html.twig" %}
+
+{% block title %}
+    {{ 'Contactez-nous'|trans }} {{ parent() }}
+{% endblock %}
+
+{% block bodyContent %}
+
+    <a href="{{ path('dywee_cms_homepage') }}" class="btn btn-default">{{ 'Retour à l\'accueil'|trans }}</a>
+
+{% endblock %}
