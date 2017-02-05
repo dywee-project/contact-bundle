@@ -6,12 +6,13 @@ services:
     #                         #
     ###########################
 
-    dywee_contact.admin_navbar_listener:
-        class: Dywee\ContactBundle\Listener\AdminDashboardBuilderListener
-        arguments: [ '@dywee_contact.admin_navbar_handler' ]
-        tags:
-            - { name: kernel.event_subscriber }
 
-    dywee_contact.admin_navbar_handler:
-        class: Dywee\ContactBundle\Service\AdminNavbarHandler
-        arguments: [ '@router' ]
+#    dywee_contact.admin_navbar_listener:
+#        class: Dywee\ContactBundle\Listener\AdminDashboardBuilderListener
+#        arguments: [ '@dywee_contact.admin_navbar_handler' ]
+#        tags:
+#            - { name: kernel.event_subscriber }
+
+#    dywee_contact.admin_navbar_handler:
+#        class: Dywee\ContactBundle\Service\AdminNavbarHandler
+#        arguments: [ '@router' ]

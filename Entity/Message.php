@@ -13,6 +13,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class Message
 {
+    const STATUS_READ = 'message.status.read';
+    const STATUS_NEW = 'message.status.new';
+    
     /**
      * @var integer
      *
@@ -22,21 +25,34 @@ class Message
      */
     private $id;
 
-
+    /**
+     * @ORM\Column(name="message", type="text")
+     */
     private $message;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     */
+    private $email;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="status", type="smallint")
+     * @ORM\Column(name="status", type="string", length=30)
      */
-    private $status;
+    private $status = self::STATUS_NEW;
+
+    
+    /**
+     * @var \Datetime
+     * @ORM\Column(type="datetime")
+     */
+    private $sentAt;
 
 
     public function __construct()
     {
-        $this->setStatus(0);
-        $this->setSendAt(new \DateTime());
+        $this->sentAt = new \DateTime();
     }
 
     /**
@@ -47,52 +63,6 @@ class Message
     public function getId()
     {
         return $this->id;
-    }
-
-    /**
-     * Set firstName
-     *
-     * @param string $firstName
-     * @return Message
-     */
-    public function setFirstName($firstName)
-    {
-        $this->firstName = $firstName;
-
-        return $this;
-    }
-
-    /**
-     * Get firstName
-     *
-     * @return string 
-     */
-    public function getFirstName()
-    {
-        return $this->firstName;
-    }
-
-    /**
-     * Set lastName
-     *
-     * @param string $lastName
-     * @return Message
-     */
-    public function setLastName($lastName)
-    {
-        $this->lastName = $lastName;
-
-        return $this;
-    }
-
-    /**
-     * Get lastName
-     *
-     * @return string 
-     */
-    public function getLastName()
-    {
-        return $this->lastName;
     }
 
     /**
@@ -117,30 +87,7 @@ class Message
     {
         return $this->email;
     }
-
-    /**
-     * Set phone
-     *
-     * @param string $phone
-     * @return Message
-     */
-    public function setPhone($phone)
-    {
-        $this->phone = $phone;
-
-        return $this;
-    }
-
-    /**
-     * Get phone
-     *
-     * @return string 
-     */
-    public function getPhone()
-    {
-        return $this->phone;
-    }
-
+    
     /**
      * Set message
      *
@@ -165,26 +112,13 @@ class Message
     }
 
     /**
-     * Set sendAt
-     *
-     * @param \DateTime $sendAt
-     * @return Message
-     */
-    public function setSendAt($sendAt)
-    {
-        $this->sendAt = $sendAt;
-
-        return $this;
-    }
-
-    /**
      * Get sendAt
      *
      * @return \DateTime 
      */
-    public function getSendAt()
+    public function getSentAt()
     {
-        return $this->sendAt;
+        return $this->sentAt;
     }
 
     /**
