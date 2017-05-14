@@ -1,5 +1,5 @@
 {
-  "name": "dywee/contact-bundle",
+  "name": "olix21/contact-bundle",
   "type": "symfony-bundle",
   "description": "Symfony3 bundle for easy management of contact form",
   "keywords": ["address"],
@@ -13,12 +13,12 @@
     }
   ],
   "require": {
-    "php": ">=7.0.0",
-    "dywee/core-bundle": "dev-master"
+    "php": ">=7.1.0",
+    "olix21/core-bundle": "dev-master"
   },
   "autoload": {
     "psr-4": {
-      "Dywee\\ContactBundle\\": ""
+      "Olix21\\ContactBundle\\": ""
     }
   }
 }
