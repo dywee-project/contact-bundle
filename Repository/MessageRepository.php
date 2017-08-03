@@ -25,9 +25,8 @@ class MessageRepository extends EntityRepository
     {
         $qb = $this->createQueryBuilder('m')
             ->select('m')
-            ->orderBy('m.sendAt', 'desc')
-            ->where('m.status = 0 and m.website = :website')
-            ->setParameters(array('website' => $website))
+            ->orderBy('m.sentAt', 'desc')
+            ->where('m.status = 0')
         ;
 
         return $qb->getQuery()->getResult();

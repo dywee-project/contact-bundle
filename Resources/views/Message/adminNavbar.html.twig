@@ -1,5 +1,5 @@
 {# Dywee\ContactBundle\Resources\View\Message\adminNavbar.html.twig #}
-
+{#
 {% set nbre = messageList|length %}
 <!-- Messages: style can be found in dropdown.less-->
 <li class="dropdown messages-menu">
@@ -9,6 +9,7 @@
     </a>
     <ul class="dropdown-menu">
         <li class="header">Vous avez {% if nbre > 0 %}{{ nbre }}{% endif %} nouveaux messages</li>
+
         <li>
             <!-- inner menu: contains the actual data -->
             <ul class="menu">
@@ -26,7 +27,7 @@
                                 {{ message.firstName }} {{ message.lastName }}
                                 <small><i class="fa fa-clock-o"></i> {{ message.sendAt|date('d/m/Y à H:m') }}</small>
                             </h4>
-                            <p>{{ message.message|truncate(50) }}</p>
+                            <p>{# TODO twig dependance {{ message.message|truncate(50) }}{{ message.message }}</p>
                         </a>
                     </li><!-- end message -->
                 {% endfor %}
@@ -35,3 +36,4 @@
         <li class="footer"><a href="{{ path('dywee_message_table') }}">Voir tous les messages</a></li>
     </ul>
 </li>
+#}
