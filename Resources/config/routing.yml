@@ -1,7 +1,3 @@
-dywee_message_new:
-    path:     /contact
-    defaults: { _controller: DyweeContactBundle:Contact:new }
-
 dywee_message_view:
     path:     /admin6833/message/{id}/view
     defaults: { _controller: DyweeContactBundle:Contact:view }

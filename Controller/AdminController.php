@@ -2,7 +2,8 @@
 
 namespace Dywee\ContactBundle\Controller;
 
-class AdminController{
+class AdminController
+{
 
     public function navbarAction()
     {

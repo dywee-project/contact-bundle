@@ -50,6 +50,9 @@ class Message
     private $sentAt;
 
 
+    /**
+     * Message constructor.
+     */
     public function __construct()
     {
         $this->sentAt = new \DateTime();

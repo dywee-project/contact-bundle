@@ -2,9 +2,9 @@
 
 namespace Dywee\ContactBundle\Form;
 
+use Dywee\ContactBundle\Entity\Message;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
-use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -18,12 +18,10 @@ class MessageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('firstName',  null, array('required' => false))
-            ->add('lastName',   null)
             ->add('email',      EmailType::class)
-            ->add('phone',      null, array('required' => false))
-            ->add('message',    TextareaType::class)
-            ->add('submit',     SubmitType::class)
+            ->add('message',    TextareaType::class, [
+                'attr' => ['rows' => 15]
+            ])
         ;
     }
     
@@ -33,7 +31,7 @@ class MessageType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'Dywee\ContactBundle\Entity\Message'
+            'data_class' => Message::class
         ));
     }
 

@@ -1,13 +1,18 @@
 <?php
+
 namespace Dywee\ContactBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
 class PluginsController extends Controller
 {
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     */
     public function ContactInfosAction()
     {
-        $data = array();
+        $data = [];
+
         return $this->render('DyweeContactBundle:Plugins:contactInfos.html.twig', $data);
     }
 }
