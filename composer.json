@@ -14,7 +14,7 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "dywee/core-bundle": "1.0-dev"
+    "dywee/core-bundle": "dev-master"
   },
   "require-dev": {
     "doctrine/doctrine-bundle": "^1.3",
