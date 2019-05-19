@@ -7,7 +7,5 @@ class AdminController
 
     public function navbarAction()
     {
-
     }
-
 }

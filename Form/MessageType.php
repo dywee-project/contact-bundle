@@ -18,8 +18,8 @@ class MessageType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-            ->add('email',      EmailType::class)
-            ->add('message',    TextareaType::class, [
+            ->add('email', EmailType::class)
+            ->add('message', TextareaType::class, [
                 'attr' => ['rows' => 15]
             ])
         ;
