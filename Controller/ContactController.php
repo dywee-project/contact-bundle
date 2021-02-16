@@ -6,11 +6,12 @@ use Dywee\CMSBundle\Entity\Page;
 use Dywee\ContactBundle\Entity\Message;
 use Dywee\ContactBundle\Form\MessageType;
 use FOS\RestBundle\Controller\Annotations\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
-class ContactController extends Controller
+class ContactController extends AbstractController
 {
     /**
      * @Route(name="dywee_message_new", path="/contact", methods={"POST", "GET"})
