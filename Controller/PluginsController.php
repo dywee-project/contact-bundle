@@ -14,6 +14,6 @@ class PluginsController extends AbstractController
     {
         $data = [];
 
-        return $this->render('DyweeContactBundle:Plugins:contactInfos.html.twig', $data);
+        return $this->render('@DyweeContactBundle/Plugins/contactInfos.html.twig', $data);
     }
 }

@@ -50,10 +50,10 @@ class ContactController extends AbstractController
 
             $request->getSession()->getFlashBag()->add('success', 'Votre message a bien été envoyé');
 
-            return $this->render('DyweeContactBundle:Message:sended.html.twig');
+            return $this->render('@DyweeContactBundle/Message/sended.html.twig');
         }
 
-        return $this->render('DyweeContactBundle:Message:add.html.twig', $data);
+        return $this->render('@DyweeContactBundle/Message/add.html.twig', $data);
     }
 
     /**
@@ -72,7 +72,7 @@ class ContactController extends AbstractController
             $messageList = $mr->findForDropdown($this->get('session')->get('activeWebsite'));
         }
 
-        return $this->render('DyweeContactBundle:Message:adminNavbar.html.twig', ['messageList' => $messageList]);
+        return $this->render('@DyweeContactBundle/Message/adminNavbar.html.twig', ['messageList' => $messageList]);
     }
 
     /**
@@ -87,7 +87,7 @@ class ContactController extends AbstractController
             ['sendAt' => 'desc']
         );
 
-        return $this->render('DyweeContactBundle:Message:table.html.twig', ['messages' => $messages]);
+        return $this->render('@DyweeContactBundle/Message/table.html.twig', ['messages' => $messages]);
     }
 
     /**
@@ -103,7 +103,7 @@ class ContactController extends AbstractController
         $em->persist($message);
         $em->flush();
 
-        return $this->render('DyweeContactBundle:Message:view.html.twig', ['message' => $message]);
+        return $this->render('@DyweeContactBundle/Message/view.html.twig', ['message' => $message]);
     }
 
     /**

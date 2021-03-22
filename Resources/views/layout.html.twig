@@ -1,6 +1,6 @@
 {# Dywee\CMSBundle\Resources\View\index.html.twig #}
 
-{% extends "::layout.html.twig" %}
+{% extends 'layout.html.twig' %}
 
 {% block title %}
      {{ parent() }}
@@ -14,7 +14,7 @@
           {% endblock %}
      </div>
      <div class="col-md-4">
-          {{ render(controller('DyweeContactBundle:Plugins:ContactInfos')) }}
+          {{ render(controller('Dywee\\ContactBundle\\Controller\\PluginsController::ContactInfosAction')) }}
      </div>
 
 {% endblock %}
