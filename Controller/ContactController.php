@@ -35,7 +35,9 @@ class ContactController extends AbstractController
             $data['page'] = $page;
         }
 
-        if ($form->handleRequest($request)->isValid()) {
+        $form->handleRequest($request);
+        
+        if ($form->isSubmitted() && $form->isValid()) {
             $em->persist($message);
             $em->flush();
 
